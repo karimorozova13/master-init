@@ -49,3 +49,23 @@ else:
             print('second')
       else:                         # x < 0, y < 0
             print('third')
+
+
+is_active = input("Is the user active? ")
+is_admin = input("Is the user administrator? ")
+is_permission = input("Does the user have access? ")
+
+access = None
+print(bool('0'))
+if is_admin=='yes' or is_admin=='y':
+    access = 'admin'
+    print(access)
+elif is_active=='yes' or is_active=='y' or is_permission=='yes' or is_permission=='y':
+    access = 'user'
+    print(access)
+
+else:
+    access = 'declined'
+    print(access)
+
+

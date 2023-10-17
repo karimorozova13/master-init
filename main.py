@@ -1,6 +1,6 @@
 import math
 
-
+print(math.sqrt(-1))
 print('Hi there')
 print('Commit from VS')
 _new_var = 30
