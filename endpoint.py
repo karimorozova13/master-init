@@ -11,10 +11,39 @@ print(get_fullname('Kari', "mo", "Va"))
 print(get_fullname('Kari', 'Mo'))
 
 def format_string(string, length):
-    print(length -len(string), 'diference')
     if len(string) >= length:
         return string
-    
-    print(len(string+" "*(length - len(string))), 'newwwwwww')
-    return " "*(length - len(string))+ string
+ 
+
+    return " "*int((length - len(string))/2)+ string
+
 print(format_string(length=15, string='abaa'))
+
+def first(size, *numbers ):
+    return size + len(numbers)
+    
+def second(size,**names ):
+    return size + len(names)
+
+first(5, "first", "second", "third")
+first(1, "Alex", "Boris")
+second(3, comment_one="first", comment_two="second", comment_third="third")
+second(10, comment_one="Alex", comment_two="Boris")
+
+def cost_delivery(quantity, discount=0):
+    if discount == 0:
+        if quantity ==1:
+            return 5
+        else:
+            return 5 + ((quantity - 1)*2)
+    else:
+        if quantity ==1:
+            return 5 - 5*discount
+        else:
+            return (5 + ((quantity - 1)*2)) - (5 + ((quantity - 1)*2))*discount
+
+
+
+
+
+cost_delivery(2, 1, 2, 3) # 7
