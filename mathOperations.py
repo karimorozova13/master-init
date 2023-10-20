@@ -5,7 +5,6 @@ operand = None
 operator = None
 wait_for_number = True
 
-#here me
 while True:
     value = input('>>>>>')
     
