@@ -21,3 +21,11 @@ def find_all_emails(text):
   
     return new_result
 print(find_all_emails('Simple email cool@api.io cool@api.i first.middle.last@iana.or a2@test.com a3@test.com.io 222111@test.com'))
+
+def find_all_emails2(text):
+    regex = r"[a-zA-Z]{1}[\w\.]+@[a-zA-z]+\.[a-zA-Z]{2,}"
+    result = re.findall(regex,text)
+    return result
+print(find_all_emails2("Ima.Fool@iana.org Ima.Fool@iana.o 1Fool@iana.org first_last@iana.org first.middle.last@iana.or a@test.com abc111@test.com.net"))
+
+
