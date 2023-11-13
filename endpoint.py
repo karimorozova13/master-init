@@ -30,7 +30,7 @@ first(1, "Alex", "Boris")
 second(3, comment_one="first", comment_two="second", comment_third="third")
 second(10, comment_one="Alex", comment_two="Boris")
 
-def cost_delivery(quantity, discount=0):
+def cost_delivery(quantity, *other, discount=0):
     if discount == 0:
         if quantity ==1:
             return 5
@@ -47,3 +47,4 @@ def cost_delivery(quantity, discount=0):
 
 
 cost_delivery(2, 1, 2, 3) # 7
+print(cost_delivery(2, 1, 2, 3))
