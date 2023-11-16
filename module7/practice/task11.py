@@ -1,10 +1,11 @@
 def get_credentials_users(path):
-    with open(path, 'br') as fh:
-        file = fh.read()
-        s = file.decode('utf-8')
-        print(s)
-        # for el in file:
-        #     print(el[1::].decode('utf-8'))
-        # print(file)
-        return True
-print(get_credentials_users('univer.bin'))
+    with open(path, 'rb') as fh:
+        file = fh.readlines()
+        s = []
+        for el in file:
+            str = el.decode('utf-8')
+            new_str = str.split('\n')
+            print(new_str)
+            s.append(new_str[0])
+        
+        return s
