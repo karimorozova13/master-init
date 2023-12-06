@@ -1,0 +1,3 @@
+rent | 1600
+restaurants | 300
+toys | 200
