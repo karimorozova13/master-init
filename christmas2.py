@@ -1,6 +1,6 @@
 
 
-with open('advent2.txt', 'r') as fh:
+with open('advent3.txt', 'r') as fh:
     data = fh.readlines()
     i =0
     obj ={}
@@ -33,6 +33,26 @@ with open('advent2.txt', 'r') as fh:
 obj.update({key:value}) 
 
 seeds = obj['seeds']
+new_seeds = []
+new_seeds.append(seeds[:2])
+new_seeds.append(seeds[2:4])
+new_seeds.append(seeds[4:6])
+new_seeds.append(seeds[6:8])
+new_seeds.append(seeds[8:10])
+new_seeds.append(seeds[10:12])
+new_seeds.append(seeds[12:14])
+new_seeds.append(seeds[14:16])
+new_seeds.append(seeds[16:18])
+new_seeds.append(seeds[18:20])
+n_l =[]
+
+for el in new_seeds:
+    print(el)
+    for i in range(int(el[0]), int(el[0])+int(el[1])):
+        
+        n_l.append(i)
+print(n_l)
+    
 seed_to_soil_map = obj['seed-to-soil map:']
 soil_to_fertilize_map = obj['soil-to-fertilizer map:']
 fertilizer_to_water_map = obj['fertilizer-to-water map:']
@@ -41,7 +61,7 @@ light_to_temperature_map = obj['light-to-temperature map:']
 temperature_to_humidity_map = obj['temperature-to-humidity map:']
 humidity_to_location_map = obj['humidity-to-location map:']
 
-
+print(seeds)
 def convert_value(seed, arr_of_str ):
     output = seed 
     
@@ -60,7 +80,7 @@ def convert_value(seed, arr_of_str ):
 last_obj = {}
 last_index = 0
 
-for el in seeds:
+for el in n_l:
     
     soil = convert_value(el, seed_to_soil_map)
     fertilizer =convert_value(soil, soil_to_fertilize_map)
@@ -85,7 +105,7 @@ for el in seeds:
     last_index += 1
            
            
-print(last_obj)
+# print(last_obj)
 l= []
 
 for key, value in last_obj.items():
